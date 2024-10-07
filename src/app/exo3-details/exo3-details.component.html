@@ -1,0 +1,8 @@
+<div style="font-size: 40px; text-align: left; margin-top: 40px;">
+    <strong>Libellé</strong> : {{ transaction.label }}<br>
+    <strong>Montant</strong> : {{ transaction.amount }}<br>
+    <strong>Solde</strong> : {{ transaction.balance }}<br>
+    <strong>Date</strong> : {{ transaction.date.slice(0, 10).split('-').reverse().join('-') }}<br>
+    <strong>Description</strong> : {{ transaction.description }}<br>
+</div>
+

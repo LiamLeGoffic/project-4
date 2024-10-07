@@ -1,0 +1,29 @@
+<div>
+    <h2 style="text-align: center;">Transactions : </h2>
+    <p style="text-align: center;">Possibilité de tri de façon ascendante et descendante sur chacune des colonnes (en cliquant ou recliquant sur un nom de colonne)</p>
+    <div style="display: flex; justify-content: center;">
+        <table>
+            <tr>
+                <th [ngStyle]="applyStyle('label')">
+                    <a (click)="applyFilter('label')"><div>Libellé</div></a>
+                </th>
+                <th [ngStyle]="applyStyle('amount')">
+                    <a (click)="applyFilter('amount')"><div>Montant</div></a>
+                </th>
+                <th [ngStyle]="applyStyle('balance')">
+                    <a (click)="applyFilter('balance')"><div>Solde</div></a>
+                </th>
+                <th [ngStyle]="applyStyle('date')">
+                    <a (click)="applyFilter('date')"><div>Date</div></a>
+                </th>
+            </tr>
+            <tr *ngFor="let item of sortedTransactions" [routerLink]="['/Exo3/details', item.id]" class="transaction">
+                <td>{{ item.label }}</td>
+                <td>{{ item.amount }}</td>
+                <td>{{ item.balance }}</td>
+                <td>{{ item.date.slice(0, 10).split('-').reverse().join('-') }}</td>
+            </tr>
+        </table>
+    </div>
+    
+</div>
